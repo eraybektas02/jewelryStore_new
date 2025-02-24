@@ -1,0 +1,22 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <StackLayout class="p-4 space-y-4">
+        <Label text="Giriş Yap" class="text-2xl font-bold text-center mb-8" color="#333"/>
+        
+        <TextField hint="E-posta" text="{{ email }}" keyboardType="email" 
+            class="input" autocorrect="false" autocapitalizationType="none"/>
+        
+        <TextField hint="Şifre" text="{{ password }}" secure="true" 
+            class="input" autocorrect="false" autocapitalizationType="none"/>
+        
+        <Button text="Giriş Yap" tap="{{ login }}" isEnabled="{{ !isLoading }}"
+            class="btn-primary h-12" backgroundColor="#4a90e2" color="white"/>
+
+            <Button text="Test" tap="{{ save }}"
+    class="btn-primary h-12" backgroundColor="#4a90e2" color="white"/>
+        
+        <ActivityIndicator busy="{{ isLoading }}" />
+        
+        <Label text="{{ test }}" class="text-white-500 text-center" 
+            visibility="{{ errorMessage ? 'visible' : 'collapsed' }}" color="white" textWrap="true"/>
+    </StackLayout>
+</Page>

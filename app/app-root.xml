@@ -5,4 +5,7 @@
     <TabViewItem title="Kayıtlar" ios:iconSource="res://list" android:iconSource="res://ic_menu_view">
         <Frame defaultPage="pages/customers/customers-page" />
     </TabViewItem>
+    <TabViewItem title="Kayıtlar" ios:iconSource="res://list" android:iconSource="res://ic_menu_view">
+        <Frame defaultPage="pages/login/login-page" />
+    </TabViewItem>
 </TabView>
