@@ -1,0 +1,5 @@
+    <TabView selectedTabTextColor="#4a90e2" androidTabsPosition="bottom">
+        <TabViewItem title="Login" ios:iconSource="res://list" android:iconSource="res://ic_menu_view">
+            <Frame defaultPage="pages/login/login-page" />
+        </TabViewItem>
+    </TabView>

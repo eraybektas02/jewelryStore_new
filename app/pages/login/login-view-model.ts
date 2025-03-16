@@ -1,4 +1,4 @@
-import { Observable, Frame } from '@nativescript/core';
+import { Observable, Frame, Page } from '@nativescript/core';
 import { Login } from '../../models/login';
 import { Auth_login } from '../../services/auth';
 
@@ -8,7 +8,7 @@ export class LoginViewModel extends Observable {
     private _password: string = '';
     private _errorMessage: string = '';
     private _isLoading: boolean = false;
-    constructor() {
+    constructor(private page: Page) {
         super();
     }
 
@@ -17,8 +17,8 @@ export class LoginViewModel extends Observable {
             this.isLoading = true; // İşlem başlamadan yükleniyor göstergesi açılabilir.
             const success = await Auth_login(this.email, this.password); // await ekledik
             if (success) {
-                Frame.topmost().navigate({
-                    moduleName: "app-root",
+                this.page.frame.navigate({
+                    moduleName: "main-root",
                     clearHistory: true
                 });
                 alert('success');
